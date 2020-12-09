@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from ipify import get_ip
 
 from .models import Greeting
 
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "index.html")
+    # return render(request, "index.html")
+    ip = get_ip()
+    return ip
+    
 
 
 def db(request):
